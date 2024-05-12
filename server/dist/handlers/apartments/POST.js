@@ -14,7 +14,10 @@ export async function POSTapartments(req, res) {
         const error_msgs = errors.map((validation_err) => {
             return validation_err.constraints;
         });
-        res.json({ msg: "Info you provided is invalid", err: { error_msgs } });
+        res.json({
+            msg: "Body you provided does not follow constraints",
+            err: { error_msgs },
+        });
     }
     else {
         await AppDataSource.createQueryBuilder()

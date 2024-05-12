@@ -1,8 +1,9 @@
 {
   "scripts": {
-    "dev": "tsc && node --env-file=.env ./dist/index.js",
+    "start": "tsc && node --env-file=.env ./dist/index.js",
     "dev-watch": "tsc --watch & node --env-file=.env --watch ./dist/index.js",
-    "debug": "tsc && node --env-file=.env --inspect-brk ./dist/index.js"
+    "debug": "tsc && node --env-file=.env --inspect-brk ./dist/index.js",
+    "seed-db": "tsc && node --env-file=.env ./dist/utils/seed.js"
   },
   "type": "module",
   "dependencies": {

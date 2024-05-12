@@ -3,15 +3,10 @@ import { Apartments } from "#db_models/Apartments.js";
 import { validate } from "class-validator";
 import { Request, Response } from "express";
 
-type POSTBody = {
-  name: string;
-  rooms: number;
-  price: number;
-  description: string;
-};
+import type { ReqBody } from "../../@types/common_types.js";
 
 export async function POSTapartments(req: Request, res: Response) {
-  const { name, rooms, price, description } = req.body as POSTBody;
+  const { name, rooms, price, description } = req.body as ReqBody;
 
   const newApartment = new Apartments();
   newApartment.name = name;
@@ -27,7 +22,10 @@ export async function POSTapartments(req: Request, res: Response) {
       return validation_err.constraints;
     });
 
-    res.json({ msg: "Info you provided is invalid", err: { error_msgs } });
+    res.json({
+      msg: "Body you provided does not follow constraints",
+      err: { error_msgs },
+    });
   } else {
     await AppDataSource.createQueryBuilder()
       .insert()
