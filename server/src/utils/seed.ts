@@ -37,6 +37,8 @@ async function seedDB() {
       .execute();
     console.log("Inserted apartment: ", newApartment);
   }
+
+  await AppDataSource.destroy();
 }
 
 seedDB();
