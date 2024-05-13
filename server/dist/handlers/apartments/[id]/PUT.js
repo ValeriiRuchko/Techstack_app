@@ -21,12 +21,17 @@ export async function UPDATEapartment(req, res) {
         });
     }
     else {
-        await AppDataSource.getRepository(Apartments).update({ id: id }, newApartment);
-        res.statusCode = 200;
-        res.json({
-            msg: "Appartment was updated",
-            data: { name, rooms, price, description },
-        });
+        try {
+            await AppDataSource.getRepository(Apartments).update({ id: id }, newApartment);
+            res.statusCode = 200;
+            res.json({
+                msg: "Appartment was updated",
+                data: { name, rooms, price, description },
+            });
+        }
+        catch (err) {
+            console.log("Error trying to update a record", err);
+        }
     }
 }
 //# sourceMappingURL=PUT.js.map

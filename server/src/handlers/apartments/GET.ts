@@ -29,18 +29,23 @@ export async function GETapartments(req: Request, res: Response) {
   // as they were inserted (essentially spread operator of empty object will add no new find opts)
   const order_clause = price
     ? {
-        order: {
-          price: (price === "asc" ? "ASC" : "DESC") as FindOptionsOrderValue,
-        },
-      }
+      order: {
+        price: (price === "asc" ? "ASC" : "DESC") as FindOptionsOrderValue,
+      },
+    }
     : {};
 
-  const apartments = await AppDataSource.getRepository(Apartments).findAndCount(
-    {
+  try {
+    const [apartments, count] = await AppDataSource.getRepository(
+      Apartments,
+    ).findAndCount({
       where: where_clause,
       ...order_clause,
-    },
-  );
-  res.statusCode = 200;
-  res.json(apartments);
+    });
+
+    res.statusCode = 200;
+    res.json({ apartments, count });
+  } catch (err: unknown) {
+    console.log("Error retrieving data from DB", err);
+  }
 }

@@ -20,16 +20,21 @@ export async function POSTapartments(req, res) {
         });
     }
     else {
-        await AppDataSource.createQueryBuilder()
-            .insert()
-            .into(Apartments)
-            .values([newApartment])
-            .execute();
-        res.statusCode = 200;
-        res.json({
-            msg: "Appartment was created",
-            data: { name, rooms, price, description },
-        });
+        try {
+            await AppDataSource.createQueryBuilder()
+                .insert()
+                .into(Apartments)
+                .values([newApartment])
+                .execute();
+            res.statusCode = 200;
+            res.json({
+                msg: "Appartment was created",
+                data: { name, rooms, price, description },
+            });
+        }
+        catch (err) {
+            console.log("Error trying to create a new record", err);
+        }
     }
 }
 //# sourceMappingURL=POST.js.map

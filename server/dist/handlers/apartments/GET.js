@@ -20,11 +20,16 @@ export async function GETapartments(req, res) {
             },
         }
         : {};
-    const apartments = await AppDataSource.getRepository(Apartments).findAndCount({
-        where: where_clause,
-        ...order_clause,
-    });
-    res.statusCode = 200;
-    res.json(apartments);
+    try {
+        const [apartments, count] = await AppDataSource.getRepository(Apartments).findAndCount({
+            where: where_clause,
+            ...order_clause,
+        });
+        res.statusCode = 200;
+        res.json({ apartments, count });
+    }
+    catch (err) {
+        console.log("Error retrieving data from DB", err);
+    }
 }
 //# sourceMappingURL=GET.js.map

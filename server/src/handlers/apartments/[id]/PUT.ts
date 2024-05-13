@@ -28,15 +28,19 @@ export async function UPDATEapartment(req: Request, res: Response) {
       err: { error_msgs },
     });
   } else {
-    await AppDataSource.getRepository(Apartments).update(
-      { id: id },
-      newApartment,
-    );
+    try {
+      await AppDataSource.getRepository(Apartments).update(
+        { id: id },
+        newApartment,
+      );
 
-    res.statusCode = 200;
-    res.json({
-      msg: "Appartment was updated",
-      data: { name, rooms, price, description },
-    });
+      res.statusCode = 200;
+      res.json({
+        msg: "Appartment was updated",
+        data: { name, rooms, price, description },
+      });
+    } catch (err: unknown) {
+      console.log("Error trying to update a record", err);
+    }
   }
 }
