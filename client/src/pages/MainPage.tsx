@@ -1,3 +1,5 @@
+import Button from "../components/components-styled/Button.styled.js";
+
 type MainPageProps = {
   className: string;
 };
@@ -5,7 +7,11 @@ type MainPageProps = {
 export default function MainPage(props: MainPageProps) {
   return (
     <div className={`${props.className}`}>
-      <p>It's a main page</p>
+      <div style={{ display: "flex", flexDirection: "column", width: "200px" }}>
+        <p>It's a main page</p>
+        <Button>Hello</Button>
+        <Button $primary>How are you</Button>
+      </div>
     </div>
   );
 }
