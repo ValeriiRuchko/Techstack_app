@@ -24,7 +24,7 @@ $ npm install
 
 ***
 
-4. Add necessary credentials and ports to the .env.example file and then rename it to .env
+4. Add necessary credentials and ports to the **.env.example** file and then ***rename it to .env***
 
 ***
 
