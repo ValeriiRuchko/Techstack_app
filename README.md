@@ -22,7 +22,11 @@ $ npm install
 
 3. Create new PostgreSQL database with desired credentials and start it.
 
+***
+
 4. Add necessary credentials and ports to the .env.example file and then rename it to .env
+
+***
 
 5. Seed database with initial records:
 
