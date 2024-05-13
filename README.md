@@ -3,8 +3,8 @@
 ## Prerequisites:
 
 - Node.js - at least of version >= 20.6.0, as built-in support for .env files is used;
-- typescript - _start_ and _dev-watch_ scripts use **tsc** for transpilation.
-- PostgreSQL@15 or PostgreSQL@16
+- typescript - _start_ and _dev-watch_ scripts use **tsc** for transpilation;
+- PostgreSQL@15 or PostgreSQL@16.
 
 ### Server side:
 
