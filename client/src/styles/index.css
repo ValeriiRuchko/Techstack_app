@@ -5,6 +5,11 @@
 body,
 root {
   margin: 0;
+  font-size: 18px;
+}
+
+input {
+  font-size: 1rem;
 }
 
 /* this thing is crucial to get rid of unnecessary margins over text/p/h1 elements */

@@ -1,5 +1,5 @@
-import MainContainer from "../components/components-styled/MainContainer.styled.js";
-import Button from "../components/Button.js";
+import Form from "../components/Form.js";
+import PrimaryContainer from "../components/components-styled/PrimaryContainer.styled.js";
 
 type MainPageProps = {
   className: string;
@@ -8,21 +8,9 @@ type MainPageProps = {
 export default function MainPage(props: MainPageProps) {
   return (
     <div className={`${props.className}`}>
-      <MainContainer>
-        <Button
-          onClick={() => {
-            alert("I'm clicked");
-          }}
-          text="Create apartment"
-        />
-        <Button
-          $primary={true}
-          onClick={() => {
-            alert("Me too");
-          }}
-          text="Delete"
-        />
-      </MainContainer>
+      <PrimaryContainer>
+        <Form />
+      </PrimaryContainer>
     </div>
   );
 }

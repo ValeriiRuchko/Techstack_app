@@ -1,15 +1,18 @@
-import { ReactEventHandler } from "react";
+import { ComponentProps } from "react";
 import ButtonStyled from "./components-styled/Button.styled";
 
-type ButtonProps = {
-  onClick: ReactEventHandler<HTMLButtonElement>;
+interface CustomButtonProps extends ComponentProps<"button"> {
   text: string;
   $primary?: boolean;
-};
+}
 
-export default function Button(props: ButtonProps) {
+export default function Button(props: CustomButtonProps) {
   return (
-    <ButtonStyled $primary={props.$primary} onClick={props.onClick}>
+    <ButtonStyled
+      type={props.type}
+      $primary={props.$primary}
+      onClick={props.onClick}
+    >
       {props.text}
     </ButtonStyled>
   );
