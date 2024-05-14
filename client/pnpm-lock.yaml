@@ -54,9 +54,6 @@ importers:
       eslint-plugin-react-refresh:
         specifier: ^0.4.6
         version: 0.4.6(eslint@8.57.0)
-      sass:
-        specifier: ^1.75.0
-        version: 1.75.0
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -1881,6 +1878,7 @@ snapshots:
     dependencies:
       normalize-path: 3.0.0
       picomatch: 2.3.1
+    optional: true
 
   argparse@2.0.1: {}
 
@@ -1905,7 +1903,8 @@ snapshots:
 
   balanced-match@1.0.2: {}
 
-  binary-extensions@2.3.0: {}
+  binary-extensions@2.3.0:
+    optional: true
 
   brace-expansion@1.1.11:
     dependencies:
@@ -1955,6 +1954,7 @@ snapshots:
       readdirp: 3.6.0
     optionalDependencies:
       fsevents: 2.3.3
+    optional: true
 
   color-convert@1.9.3:
     dependencies:
@@ -2221,7 +2221,8 @@ snapshots:
 
   ignore@5.3.1: {}
 
-  immutable@4.3.5: {}
+  immutable@4.3.5:
+    optional: true
 
   import-fresh@3.3.0:
     dependencies:
@@ -2242,6 +2243,7 @@ snapshots:
   is-binary-path@2.1.0:
     dependencies:
       binary-extensions: 2.3.0
+    optional: true
 
   is-core-module@2.13.1:
     dependencies:
@@ -2333,7 +2335,8 @@ snapshots:
 
   node-releases@2.0.14: {}
 
-  normalize-path@3.0.0: {}
+  normalize-path@3.0.0:
+    optional: true
 
   once@1.4.0:
     dependencies:
@@ -2410,6 +2413,7 @@ snapshots:
   readdirp@3.6.0:
     dependencies:
       picomatch: 2.3.1
+    optional: true
 
   regenerator-runtime@0.14.1: {}
 
@@ -2458,6 +2462,7 @@ snapshots:
       chokidar: 3.6.0
       immutable: 4.3.5
       source-map-js: 1.2.0
+    optional: true
 
   scheduler@0.23.2:
     dependencies:

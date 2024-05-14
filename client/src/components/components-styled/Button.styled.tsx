@@ -1,18 +1,29 @@
 import styled, { css } from "styled-components";
 
 const Button = styled.button<{ $primary?: boolean }>`
-  background: transparent;
+  background: white;
   border-radius: 3px;
-  border: 2px solid #bf4f74;
-  color: #bf4f74;
-  margin: 0 1em;
+  border: 2px solid #81b29a;
+  color: #81b29a;
   padding: 0.25em 1em;
+  width: 10rem;
+  height: 1.5rem;
+
+  &:hover {
+    background: #81b29a;
+    color: white;
+  }
 
   ${(props) =>
     props.$primary &&
     css`
-      background: #bf4f74;
+      background: #81b29a;
       color: white;
+
+      &:hover {
+        background: white;
+        color: #81b29a;
+      }
     `};
 `;
 
