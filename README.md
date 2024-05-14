@@ -3,8 +3,8 @@
 ## Prerequisites:
 
 - Node.js - at least of version >= 20.6.0, as built-in support for .env files is used;
-- typescript - _start_ and _dev-watch_ scripts use **tsc** for transpilation.
-- PostgreSQL@15 or PostgreSQL@16
+- typescript - _start_ and _dev-watch_ scripts use **tsc** for transpilation;
+- PostgreSQL@15 or PostgreSQL@16.
 
 ### Server side:
 
@@ -22,7 +22,11 @@ $ npm install
 
 3. Create new PostgreSQL database with desired credentials and start it.
 
-4. Add necessary credentials and ports to the .env.example file and then rename it to .env
+***
+
+4. Add necessary credentials and ports to the **.env.example** file and then ***RENAME IT to .env***
+
+***
 
 5. Seed database with initial records:
 
