@@ -26,7 +26,16 @@ export default function ApartmentCard(props: ApartmentCardProps) {
 
   const { name, rooms, price, description } = props.apartment;
   return (
-    <DirectionContainer $vertical={true} $width="100%" $height="150px">
+    <DirectionContainer
+      $vertical={true}
+      $width="100%"
+      $height="auto"
+      $gap="15px 0"
+      style={{
+        border: "3px solid #f4f1de",
+        padding: "10px 20px",
+      }}
+    >
       <h2>{name}</h2>
       <DirectionContainer style={{ justifyContent: "left" }} $gap="20px">
         <p>Rooms: {rooms}</p>
@@ -37,7 +46,11 @@ export default function ApartmentCard(props: ApartmentCardProps) {
         <h3>Description:</h3>
         <p>{description}</p>
       </DirectionContainer>
-      <Button text="Delete" onClick={handleButtonClick}></Button>
+      <Button
+        $primary={true}
+        text="Delete"
+        onClick={handleButtonClick}
+      ></Button>
     </DirectionContainer>
   );
 }

@@ -2,7 +2,7 @@
 .App {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 150vh;
 }
 
 /* I have to apply this style to every page in order for main content to fill out the whole page */

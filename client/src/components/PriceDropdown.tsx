@@ -9,6 +9,7 @@ export default function FilterByPriceDropdown(props: FilterByPriceDropdown) {
   return (
     <select
       name="price-sort"
+      style={{ width: "15rem", height: "1.5rem", borderRadius: "5px" }}
       onChange={(e) => {
         const price = e.target.value as "" | "asc" | "desc";
         if (price !== "") {
@@ -18,7 +19,7 @@ export default function FilterByPriceDropdown(props: FilterByPriceDropdown) {
         }
       }}
     >
-      <option value="">No filter</option>
+      <option value="">Sort by price</option>
       <option value="asc">Ascending</option>
       <option value="desc">Descending</option>
     </select>

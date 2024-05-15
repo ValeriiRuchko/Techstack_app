@@ -8,7 +8,8 @@ import type {
 } from "../@types/common_types";
 import ApartmentCard from "../components/ApartmentCard.js";
 import FilterByPriceDropdown from "../components/PriceDropdown.js";
-import FilterByRoomsDropdown from "../components/RoomsDropdown.js";
+import SortByRoomsInput from "../components/RoomsInput.js";
+import DirectionContainer from "../components/components-styled/DirectionContainer.styled.js";
 
 type MainPageProps = {
   className: string;
@@ -39,23 +40,30 @@ export default function MainPage(props: MainPageProps) {
 
   return (
     <div className={`${props.className}`}>
-      <PrimaryContainer>
+      <PrimaryContainer style={{ gap: "30px" }}>
         <Form updatePage={fetchApartments} />
-        <h2>Results found: {counter}</h2>
-        <FilterByPriceDropdown setValue={setPriceFilter} />
-        <FilterByRoomsDropdown
-          setValue={setRoomsFilter}
-          apartments={apartments}
-        />
-        {apartments?.map((apartment) => {
-          return (
-            <ApartmentCard
-              key={apartment.id}
-              updatePage={fetchApartments}
-              apartment={apartment}
-            />
-          );
-        })}
+        <DirectionContainer
+          $width="40vw"
+          $gap="10px 20px"
+          style={{ alignItems: "center", justifyContent: "space-between" }}
+        >
+          <h2>Results found: {counter}</h2>
+          <DirectionContainer $vertical={true} $gap="10px 0">
+            <SortByRoomsInput setValue={setRoomsFilter} />
+            <FilterByPriceDropdown setValue={setPriceFilter} />
+          </DirectionContainer>
+        </DirectionContainer>
+        <DirectionContainer $gap="40px 0" $vertical={true} $width="40vw">
+          {apartments?.map((apartment) => {
+            return (
+              <ApartmentCard
+                key={apartment.id}
+                updatePage={fetchApartments}
+                apartment={apartment}
+              />
+            );
+          })}
+        </DirectionContainer>
       </PrimaryContainer>
     </div>
   );
