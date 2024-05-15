@@ -1,6 +1,7 @@
 import "reflect-metadata";
 import AppDataSource from "./db/data-source.js";
 import express from "express";
+import cors from "cors";
 import { GETapartments } from "./handlers/apartments/GET.js";
 import { POSTapartments } from "./handlers/apartments/POST.js";
 import { GETapartment } from "./handlers/apartments/[id]/GET.js";
@@ -17,6 +18,9 @@ catch (err) {
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cors({
+    origin: "*",
+}));
 app.use("/apartments/:id", checkUUID_middleware);
 const SERVER_PORT = +process.env.SERVER_PORT || 3000;
 app.route("/apartments").get(GETapartments).post(POSTapartments);

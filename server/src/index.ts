@@ -3,6 +3,7 @@ import "reflect-metadata";
 import AppDataSource from "./db/data-source.js";
 // request-handling-related-imports
 import express from "express";
+import cors from "cors";
 
 import { GETapartments } from "./handlers/apartments/GET.js";
 import { POSTapartments } from "./handlers/apartments/POST.js";
@@ -23,6 +24,12 @@ const app = express();
 // Express built-in middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+// third party middleware
+app.use(
+  cors({
+    origin: "*",
+  }),
+);
 // custom middlewares
 app.use("/apartments/:id", checkUUID_middleware);
 
