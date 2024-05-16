@@ -61,6 +61,11 @@ export default function Form(props: FormProps) {
 
         const data: { msg: string; data: Apartment } = await res.json();
         props.updatePage();
+
+        setName("");
+        setRooms("");
+        setPrice("");
+        setDescription("");
         console.log(data);
       } catch (err: unknown) {
         console.log("Error creating an apartment occured");

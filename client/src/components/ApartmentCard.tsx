@@ -44,7 +44,7 @@ export default function ApartmentCard(props: ApartmentCardProps) {
 
       <DirectionContainer $vertical={true}>
         <h3>Description:</h3>
-        <p>{description}</p>
+        <p style={{ wordWrap: "break-word" }}>{description}</p>
       </DirectionContainer>
       <Button
         $primary={true}

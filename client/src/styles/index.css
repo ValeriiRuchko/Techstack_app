@@ -1,11 +1,13 @@
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --bg-image: url("/background.jpg");
 }
 
 body,
 root {
   margin: 0;
   font-size: 18px;
+  background-image: var(--bg-image);
 }
 
 input {
